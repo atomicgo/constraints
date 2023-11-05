@@ -202,7 +202,6 @@ func TestConstraints(t *testing.T) {
 			// Strings
 			acceptAddable(t, "")
 		})
-
 	})
 }
 
