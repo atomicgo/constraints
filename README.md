@@ -95,7 +95,7 @@ Addable is a constraint that matches any type that can be added with the \+ oper
 
 ```go
 type Addable interface {
-    // contains filtered or unexported methods
+    Number | ~string
 }
 ```
 
@@ -106,7 +106,7 @@ Comparable is a constraint that matches any type that can be compared with the =
 
 ```go
 type Comparable interface {
-    // contains filtered or unexported methods
+    comparable
 }
 ```
 
@@ -117,7 +117,7 @@ Complex is a constraint that matches any complex number type.
 
 ```go
 type Complex interface {
-    // contains filtered or unexported methods
+    ~complex64 | ~complex128
 }
 ```
 
@@ -128,7 +128,7 @@ Float is a constraint that matches any floating point number type.
 
 ```go
 type Float interface {
-    // contains filtered or unexported methods
+    ~float32 | ~float64
 }
 ```
 
@@ -139,7 +139,7 @@ Integer is a constraint that matches any integer type.
 
 ```go
 type Integer interface {
-    // contains filtered or unexported methods
+    Signed | Unsigned
 }
 ```
 
@@ -150,7 +150,7 @@ Number is a constraint that matches any real number type. The Number constraint 
 
 ```go
 type Number interface {
-    // contains filtered or unexported methods
+    Float | Integer
 }
 ```
 
@@ -161,7 +161,7 @@ Numeric is a constraint that matches any numeric type, including complex numbers
 
 ```go
 type Numeric interface {
-    // contains filtered or unexported methods
+    Number | Complex
 }
 ```
 
@@ -172,7 +172,7 @@ Orderable is a constraint that matches any type that can be ordered with the \<,
 
 ```go
 type Orderable interface {
-    // contains filtered or unexported methods
+    Integer | Float | ~string
 }
 ```
 
@@ -183,7 +183,7 @@ Ordered is a constraint that matches any ordered type.
 
 ```go
 type Ordered interface {
-    // contains filtered or unexported methods
+    Integer | Float | ~string
 }
 ```
 
@@ -194,7 +194,7 @@ Signed is a constraint that matches any signed integer type.
 
 ```go
 type Signed interface {
-    // contains filtered or unexported methods
+    ~int | ~int8 | ~int16 | ~int32 | ~int64
 }
 ```
 
@@ -205,7 +205,7 @@ Unsigned is a constraint that matches any unsigned integer type.
 
 ```go
 type Unsigned interface {
-    // contains filtered or unexported methods
+    ~uint | ~uint8 | ~uint16 | ~uint32 | ~uint64 | ~uintptr
 }
 ```
 
