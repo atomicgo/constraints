@@ -1,9 +1,6 @@
 /*
-Package template is used to generate new AtomicGo repositories.
+Package constraints provides constraints for type parameters aka. generics in Go.
 
-Write the description of the module here. You can use **markdown**!
-This description should clearly explain what the package does.
-
-Example description: https://golang.org/src/encoding/gob/doc.go
+This is a more comprehensive drop-in replacement for golang.org/x/exp/constraints.
 */
-package template
+package constraints

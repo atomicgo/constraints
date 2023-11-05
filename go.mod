@@ -1,3 +1,3 @@
-module atomicgo.dev/template
+module atomicgo.dev/constraints
 
 go 1.18
