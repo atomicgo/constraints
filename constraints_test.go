@@ -6,8 +6,14 @@ import (
 )
 
 func TestConstraints(t *testing.T) {
+	t.Parallel()
+
 	t.Run("Numbers", func(t *testing.T) {
+		t.Parallel()
+
 		t.Run("Numeric", func(t *testing.T) {
+			t.Parallel()
+
 			// Complex numbers
 			acceptNumeric(t, complex64(0))
 			acceptNumeric(t, complex128(0))
@@ -33,6 +39,8 @@ func TestConstraints(t *testing.T) {
 		})
 
 		t.Run("Number", func(t *testing.T) {
+			t.Parallel()
+
 			// Signed integers
 			acceptNumber(t, int(0))
 			acceptNumber(t, int8(0))
@@ -54,12 +62,16 @@ func TestConstraints(t *testing.T) {
 		})
 
 		t.Run("Complex", func(t *testing.T) {
+			t.Parallel()
+
 			// Complex numbers
 			acceptComplex(t, complex64(0))
 			acceptComplex(t, complex128(0))
 		})
 
 		t.Run("Integer", func(t *testing.T) {
+			t.Parallel()
+
 			// Signed integers
 			acceptInteger(t, int(0))
 			acceptInteger(t, int8(0))
@@ -77,12 +89,16 @@ func TestConstraints(t *testing.T) {
 		})
 
 		t.Run("Float", func(t *testing.T) {
+			t.Parallel()
+
 			// Floating point numbers
 			acceptFloat(t, float32(0))
 			acceptFloat(t, float64(0))
 		})
 
 		t.Run("Ordered", func(t *testing.T) {
+			t.Parallel()
+
 			// Signed integers
 			acceptOrdered(t, int(0))
 			acceptOrdered(t, int8(0))
@@ -107,6 +123,8 @@ func TestConstraints(t *testing.T) {
 		})
 
 		t.Run("Signed", func(t *testing.T) {
+			t.Parallel()
+
 			// Signed integers
 			acceptSigned(t, int(0))
 			acceptSigned(t, int8(0))
@@ -116,6 +134,8 @@ func TestConstraints(t *testing.T) {
 		})
 
 		t.Run("Unsigned", func(t *testing.T) {
+			t.Parallel()
+
 			// Unsigned integers
 			acceptUnsigned(t, uint(0))
 			acceptUnsigned(t, uint8(0))
@@ -127,7 +147,11 @@ func TestConstraints(t *testing.T) {
 	})
 
 	t.Run("Comparisons", func(t *testing.T) {
+		t.Parallel()
+
 		t.Run("Comparable", func(t *testing.T) {
+			t.Parallel()
+
 			// Complex numbers
 			acceptComparable(t, complex64(0))
 			acceptComparable(t, complex128(0))
@@ -156,6 +180,8 @@ func TestConstraints(t *testing.T) {
 		})
 
 		t.Run("Orderable", func(t *testing.T) {
+			t.Parallel()
+
 			// Signed integers
 			acceptOrderable(t, int(0))
 			acceptOrderable(t, int8(0))
@@ -180,6 +206,8 @@ func TestConstraints(t *testing.T) {
 		})
 
 		t.Run("Addable", func(t *testing.T) {
+			t.Parallel()
+
 			// Signed integers
 			acceptAddable(t, int(0))
 			acceptAddable(t, int8(0))
@@ -216,12 +244,15 @@ func accept[T any](t *testing.T, value T) {
 	// Check if the type is not nil (it shouldn't be for a value).
 	if typeOfValue == nil {
 		t.Error("Cannot determine the type of the value")
+
 		return
 	}
 
 	// Run named test
 	t.Run(typeOfValue.Name(), func(t *testing.T) {
+		t.Parallel()
 		// If the code compiles, the test passes.
+		t.SkipNow()
 	})
 }
 
